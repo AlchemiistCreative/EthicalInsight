@@ -14,18 +14,16 @@
 <br />
 <div align="center">
   <a href="https://github.com/AlchemiistCreative/EthicalInsight">
-    <div style="font-family: 'DM Sans', sans-serif;line-height: 24px;font-size:20px;"><span style="color:rgb(31, 28, 46);">Ethical</span><span style="color:rgb(255, 148, 46);">Insight</span></div>
+    <div style="font-family: 'DM Sans', sans-serif;line-height: 24px;font-size:20px;"><span style="color:#1f1c2e;">Ethical</span><span style="color:#ff942e;">Insight</span></div>
   </a>
 
-  <h3 align="center">Centralize Active Directory Auditing Tool</h3>
+  <h3 align="center">Centralized Active Directory Auditing Tool</h3>
 
   <p align="center">
     <br />
     <a href="https://github.com/AlchemiistCreative/EthicalInsight"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/AlchemiistCreative/EthicalInsight">View Demo</a>
-    ·
     <a href="https://github.com/AlchemiistCreative/EthicalInsight/issues">Report Bug</a>
     ·
     <a href="https://github.com/AlchemiistCreative/EthicalInsight/issues">Request Feature</a>
