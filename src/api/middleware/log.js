@@ -1,7 +1,5 @@
 const logs = require('../models/log.model')
 
-
-
 module.exports.push_log = function(data){
     
     logs({

@@ -1,5 +1,5 @@
 //Check by cookies
-const log = require('./log');
+const Log = require('./log');
 const jwt = require("jsonwebtoken");
 
 const config = process.env;
@@ -15,12 +15,12 @@ const verifyToken = (req, res, next) => {
     req.user = decoded;
   } catch (err) {
 
-    log({
-      file: 'auth.js',
-      line: '17',
+    Log.push_log({
+      file: 'dashboard.auth.js',
+      line: '14',
       info: err,
       type: 'error'
-  }, logs);
+  });
     return res.status(401).send("Invalid Token");
   }
   return next();
