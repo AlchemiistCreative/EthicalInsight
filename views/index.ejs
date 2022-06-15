@@ -1,0 +1,117 @@
+<%- include ('header') %>
+
+
+<body>
+
+
+<div class="app-container">
+
+  <%- include ('app-header') %>
+
+
+    <div class="app-content">
+      <%- include ('app-sidebar') %>
+
+      
+      <div class="projects-section">
+        <div class="projects-section-header">
+          <p>Managed Domain Crontrollers</p>
+          <p class="time"><%= date %></p>
+        </div>
+        <div class="projects-section-line">
+          <div class="projects-status">
+            <div class="item-status">
+              <span class="status-number"><%= count %></span>
+              <span class="status-type">Total</span>
+            </div>
+          </div>
+          <div class="view-actions">
+            <button class="view-btn list-view" title="List View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                <line x1="8" y1="6" x2="21" y2="6" />
+                <line x1="8" y1="12" x2="21" y2="12" />
+                <line x1="8" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="3.01" y2="6" />
+                <line x1="3" y1="12" x2="3.01" y2="12" />
+                <line x1="3" y1="18" x2="3.01" y2="18" /></svg>
+            </button>
+            <button class="view-btn grid-view active" title="Grid View">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                <rect x="3" y="3" width="7" height="7" />
+                <rect x="14" y="3" width="7" height="7" />
+                <rect x="14" y="14" width="7" height="7" />
+                <rect x="3" y="14" width="7" height="7" /></svg>
+            </button>
+          </div>
+        </div>
+
+
+
+      
+        <div class="project-boxes jsGridView">
+          <% for (info of infos) { %>
+          <div class="project-box-wrapper">
+          
+
+            <div class="project-box" style="background-color: var(--color-1)">
+              <div class="project-box-header">
+                <span><%= info.Site %></span>
+                <div class="more-wrapper">
+                  <div class="icon-left">
+                  <a href="/dashboard/audit/reports/events/<%= info.Domain %>" class="app-card-link" >
+                    <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-pie-chart" viewBox="0 0 24 24">
+                      <defs />
+                      <path d="M21.21 15.89A10 10 0 118 2.83M22 12A10 10 0 0012 2v10z" />
+                    </svg>
+                  </a>
+                  </div>
+         
+             
+              <div class="icon-right">
+                <a href="/dashboard/audit/reports/domain/<%= info.Domain %>" class="app-card-link" >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  </a>
+                </div>
+
+           </div>   
+          </div>
+          <div class="project-box-content-header">
+            <p class="box-content-header"><%= info.Hostname %></p>
+            <p class="box-content-subheader"><%= info.Domain %></p>
+            <p class="box-content-subheader"><%= info.IP %></p>
+          </div>
+
+          <div class="project-box-footer">
+            <div class="participants">
+              <div class="days-left" style="color: #ff942e;">
+                <%= info.ProductName %>
+              </div>
+            </div>
+            <div class="days-left" style="color: #ff942e;">
+              <%= info.OSVersion %>
+            </div>
+          </div>
+        </div>
+
+      
+      </div>
+      <% } %>
+
+
+
+
+    
+    </div>
+  </div>
+  <%- include ('app-log') %>
+
+
+
+
+  </div>
+  </div>
+
+
+</body>
+
+<script src="/js/dashboard.js"></script>

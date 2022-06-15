@@ -1,0 +1,26 @@
+
+<!--css-->
+<link rel="stylesheet" href="/css/libs/jquery.dataTables.css">
+
+<link rel="stylesheet" href="/css/datatables.css">
+
+
+<!--  JavaScript
+================================================== -->
+
+<script src="/js/libs/jquery-3.4.1.js"></script>
+<script src="/js/libs/jquery-migrate-1.4.1.js"></script>
+<script src="/js/libs/jquery.dataTables.min.js"></script>
+<script src="/js/libs/datetime.js"></script>
+
+<% if (active_page === 'reports') { %> 
+          
+    <script src="/js/datatables-users.js"></script>
+  
+  <% } %>
+    
+  <% if (active_page === 'report_events') { %> 
+    
+    <script src="/js/datatables-events.js"></script>
+  
+  <% } %>

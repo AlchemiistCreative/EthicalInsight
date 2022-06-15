@@ -1,0 +1,54 @@
+<section>
+  
+    <div class="card-grid">
+      <div class="card">
+        <div class="card__background color-1">
+          <div class="card__content">
+            <p>Total events:</p>
+            <div class="card__result"><p><%= total_events %></p></div>
+          </div>
+        </div>
+        </div>
+
+        <div class="card">
+          <div class="card__background color-2">
+            <div class="card__content">
+              <p>Total created users:</p>
+              <div class="card__result"><p><%= total_created_users %></p></div>
+            </div>
+          </div>
+          </div>
+
+          <div class="card">
+            <div class="card__background color-3">
+              <div class="card__content">
+                <p>Total deleted users:</p>
+                <div class="card__result"><p><%= total_deleted_users %></p></div>
+              </div>
+            </div>
+            </div>
+
+
+    </div>
+</section>
+
+<section>
+
+
+      <div class="p-5">
+        <table id="datatable-json" class="container">
+                            <thead>
+                                <tr>
+                                    <th>Type of Event</th>
+                                    <th>Action</th>
+                                    <th>Target User</th> 
+                                    <th>Changed By</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <!-- Ajax Color Table Body -->
+                        </table>
+        </div>
+
+
+</section>

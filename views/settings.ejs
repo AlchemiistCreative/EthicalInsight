@@ -1,0 +1,42 @@
+<%- include ('header') %>
+
+
+<body>
+
+
+<div class="app-container">
+  <%- include ('app-header') %>
+
+    <div class="app-content">
+      <%- include ('app-sidebar') %>
+
+      
+      <div class="projects-section">
+        <div class="projects-section-header">
+          <p>Settings</p>
+          <p class="time"><%= date %></p>
+        </div>
+        <div class="projects-section-line">
+          <div class="projects-status">
+            <div class="item-status">
+                <p class="title">Generate an API Key</p>
+            </div>
+          </div>
+        </div>
+
+
+        <%- include ('generate') %>
+      
+    
+  </div>
+
+
+  <%- include ('app-log') %>
+
+  </div>
+  </div>
+
+
+</body>
+
+<script src="/js/dashboard.js"></script>

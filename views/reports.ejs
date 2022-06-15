@@ -1,0 +1,55 @@
+<%- include ('header') %>
+
+<script>
+var domain = "<%= domain_name %>"
+</script>
+<body>
+
+
+<div class="app-container">
+  <%- include ('app-header') %>
+
+    <div class="app-content">
+      <%- include ('app-sidebar') %>
+
+      
+      <div class="projects-section">
+        <div class="projects-section-header">
+          <p>Reports / <%= domain_name %></p>
+          <p class="time"><%= date %></p>
+        </div>
+        <div class="projects-section-line">
+          <div class="projects-status">
+            <div class="item-status">
+        
+
+            </div>
+          </div>
+        </div>
+
+
+        <% if (active_page === 'reports') { %> 
+          
+          <%- include ('app-reports') %>
+        
+        <% } %>
+          
+        <% if (active_page === 'report_events') { %> 
+          
+          <%- include ('app-reports-events') %>
+        
+        <% } %>
+      
+    
+  </div>
+
+
+  <%- include ('app-log') %>
+
+  </div>
+  </div>
+
+
+</body>
+
+<script src="/js/dashboard.js"></script>
