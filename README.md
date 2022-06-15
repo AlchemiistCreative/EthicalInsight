@@ -13,9 +13,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
- <p align="center">
-    <div style="font-family: 'DM Sans', sans-serif;line-height: 24px;font-size:20px;"><h1 style="color:#1f1c2e;">Ethical</h1 ><h1  style="color:#ff942e;">Insight</h1></div>
-  <p>
+
+    <h1 style="font-family: 'DM Sans', sans-serif;line-height: 24px;font-size:30px;">EthicalInsight</h1>
+ 
 
   <h3 align="center">Centralized Active Directory Auditing Tool</h3>
 
