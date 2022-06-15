@@ -13,9 +13,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-
+    <a href="https://github.com/AlchemiistCreative/EthicalInsight">
     <h1 style="font-family: 'DM Sans', sans-serif;line-height: 24px;font-size:30px;">EthicalInsight</h1>
- 
+    </a>
 
   <h3 align="center">Centralized Active Directory Auditing Tool</h3>
 
