@@ -116,7 +116,7 @@ You will need a MongoDB instance.
    ```
 3. Enter your config in `.env`
    ```js
-   PORT=8080;
+   PORT=8080
    VALIDATION_TOKEN=0000
    MONGODB_URL="mongodb://example:27017/example-db"
    TOKEN_KEY="random_string"
