@@ -16,9 +16,10 @@
     <a href="https://github.com/AlchemiistCreative/EthicalInsight">
         <img src="images/ethicalinsight-low-res.png"  />
     </a>
-
-  <h3 align="center">Centralized Active Directory Auditing Tool</h3>
-
+    
+---
+  
+ <h3 align="center">Centralized Active Directory Auditing Tool</h3>
   <p align="center">
     <br />
     <a href="https://github.com/AlchemiistCreative/EthicalInsight"><strong>Explore the docs »</strong></a>
