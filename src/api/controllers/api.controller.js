@@ -17,10 +17,10 @@ const jwt = require('jsonwebtoken');
 
 //DEBUG MODE
 const debug_mode = process.env.DEBUG_MODE
-
+console.log(debug_mode)
 function clog(comment,data){
 
-  if (debug_mode){
+  if (debug_mode === "true"){
 
     console.log(comment + JSON.stringify(data));
   
@@ -229,25 +229,6 @@ router.route('/audit/reports/events/:Domain').get(auth, async (req, res) => {
 
 
 })
-
-
-router.route('/debug/events').get(auth, async (req, res) => {
-
-
-  const data = await Events.find({});
-  const Message = data[0]["Message"]
-
-  //var action = Message.split('\n')[0];
-
-  //var test = Parsing(Message, 0)
-
-  console.log(Message)
-
-
-  res.send("ok")
-
-})
-
 
 
 // Get History By User ID

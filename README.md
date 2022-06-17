@@ -14,7 +14,7 @@
 <br />
 <div align="center">
     <a href="https://github.com/AlchemiistCreative/EthicalInsight">
-        <img src="images/ethicalinsight-low-res.png"  />
+        <img src="images/ethicalinsight-low-res.png"  width="300"/>
     </a>
     
 ---
