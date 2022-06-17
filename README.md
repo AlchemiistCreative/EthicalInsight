@@ -17,8 +17,8 @@
         <img src="images/ethicalinsight-low-res.png"  width="300"/>
     </a>
     
-    
----
+
+<hr></hr>
   
 
  <h3 align="center">Centralized Active Directory Auditing Tool</h3>
