@@ -165,7 +165,6 @@ To run the scripts, the execution policy must be Unrestricted/Bypass but if you 
 From this menu you have to store your API key, activate the audit and also enable the scheduled task.
 
 
-_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
