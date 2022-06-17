@@ -24,7 +24,7 @@
  <h3 align="center">Centralized Active Directory Auditing Tool</h3>
   <p align="center">
     <br />
-    <a href="https://github.com/AlchemiistCreative/EthicalInsight"><strong>Explore the docs »</strong></a>
+    <a href="https://ethicalinsight.alchemistcreative.cloud/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/AlchemiistCreative/EthicalInsight/issues">Report Bug</a>
@@ -206,6 +206,8 @@ Distributed under the GNUv3. See `LICENSE` for more information.
 Your Name - [@alchmst_](https://twitter.com/alchmst_) - contact@thomasfrancois.net
 
 Project Link: [https://github.com/AlchemiistCreative/EthicalInsight](https://github.com/AlchemiistCreative/EthicalInsight)
+
+tags: ["animals", "Chicago", "zoos"]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
