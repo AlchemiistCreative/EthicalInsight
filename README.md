@@ -1,3 +1,22 @@
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
+[contributors-url]: https://github.com/AlchemiistCreative/EthicalInsight/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
+[forks-url]: https://github.com/AlchemiistCreative/EthicalInsight/network/members
+[stars-shield]: https://img.shields.io/github/stars/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
+[stars-url]: https://github.com/AlchemiistCreative/EthicalInsight/stargazers
+[issues-shield]: https://img.shields.io/github/issues/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
+[issues-url]: https://github.com/AlchemiistCreative/EthicalInsight/issues
+[license-shield]: https://img.shields.io/github/issues/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
+[license-url]: https://raw.githubusercontent.com/AlchemiistCreative/EthicalInsight/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/thomasfrancois-cv/
+[product-screenshot]: images/screenshot.png
+
+
+
 <div id="top"></div>
 
 [![Contributors][contributors-shield]][contributors-url]
@@ -207,19 +226,3 @@ Project Link: [https://github.com/AlchemiistCreative/EthicalInsight](https://git
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-
-<!-- MARKDOWN LINKS & IMAGES -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
-[contributors-url]: https://github.com/AlchemiistCreative/EthicalInsight/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
-[forks-url]: https://github.com/AlchemiistCreative/EthicalInsight/network/members
-[stars-shield]: https://img.shields.io/github/stars/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
-[stars-url]: https://github.com/AlchemiistCreative/EthicalInsight/stargazers
-[issues-shield]: https://img.shields.io/github/issues/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
-[issues-url]: https://github.com/AlchemiistCreative/EthicalInsight/issues
-[license-shield]: https://img.shields.io/github/issues/AlchemiistCreative/EthicalInsight.svg?style=for-the-badge
-[license-url]: https://raw.githubusercontent.com/AlchemiistCreative/EthicalInsight/main/LICENSE
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/thomasfrancois-cv/
-[product-screenshot]: images/screenshot.png
