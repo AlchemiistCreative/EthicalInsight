@@ -13,12 +13,13 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
- <p align="center">
-    <div style="font-family: 'DM Sans', sans-serif;line-height: 24px;font-size:20px;"><h1 style="color:#1f1c2e;">Ethical</h1 ><h1  style="color:#ff942e;">Insight</h1></div>
-  <p>
-
-  <h3 align="center">Centralized Active Directory Auditing Tool</h3>
-
+    <a href="https://github.com/AlchemiistCreative/EthicalInsight">
+        <img src="images/ethicalinsight-low-res.png"  />
+    </a>
+    
+---
+  
+ <h3 align="center">Centralized Active Directory Auditing Tool</h3>
   <p align="center">
     <br />
     <a href="https://github.com/AlchemiistCreative/EthicalInsight"><strong>Explore the docs »</strong></a>
@@ -115,7 +116,7 @@ You will need a MongoDB instance.
    ```
 3. Enter your config in `.env`
    ```js
-   PORT=8080;
+   PORT=8080
    VALIDATION_TOKEN=0000
    MONGODB_URL="mongodb://example:27017/example-db"
    TOKEN_KEY="random_string"
