@@ -127,7 +127,42 @@ You will need a MongoDB instance.
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+### 1. Register
+
+Create an Account with the validation token you have set up in the .env file.
+
+
+<img src="images/screenshot-1.png" alt="drawing" width="1000"/>
+
+### 2. Generate an API key
+
+Generate an API key in settings (make sure to save this key in a safe place, you will need this key to get the agent connected).
+
+<img src="images/screenshot-2.png" alt="drawing" width="1000"/>
+
+### 3. Run scripts on Domain Controller(s)
+
+Run ethicalinsight-agent.ps1 on your Domain Controller(s).
+
+<img src="images/screenshot-3.png" alt="drawing" width="1000"/>
+
+3.1 Clone this repo
+```powershell
+git clone https://github.com/AlchemiistCreative/EthicalInsight-Agent.git
+```
+3.2 Check the execution policy to be sure that you are able to run scripts.
+```powershell
+ Get-ExecutionPolicy
+```
+To run the scripts, the execution policy must be Unrestricted/Bypass but if you are in RemoteSigned, you still can copy the contents of the scripts and create new ones. (Be careful about the file names, must be exactly the same to works).
+
+3.3 Run ethicalinsight-agent.ps1
+```powershell
+.\ethicalinsight-agent.ps1 #From the correct directory location.
+```
+
+From this menu you have to store your API key, activate the audit and also enable the scheduled task.
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
