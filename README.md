@@ -164,7 +164,10 @@ To run the scripts, the execution policy must be Unrestricted/Bypass but if you 
 
 From this menu you have to store your API key, activate the audit and also enable the scheduled task.
 
+### 4. Finished
+Ensure that your Domain Contoller is on the home page if it's not case check error.log in the agent scripts directory.
 
+<img src="images/screenshot-4.png" alt="drawing" width="1000"/>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
