@@ -1,27 +1,19 @@
 <div id="top"></div>
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
+<div align="center">
 
 <!-- PROJECT LOGO -->
-<br />
-<div align="center">
-    <a href="https://github.com/AlchemiistCreative/EthicalInsight">
-        <img src="images/ethicalinsight-low-res.png"  width="300"/>
-    </a>
-    
+<img src="https://socialify.git.ci/alchemiistcreative/ethicalinsight/image?description=1&font=KoHo&forks=1&issues=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FAlchemiistCreative%2FEthicalInsight%2Fmain%2Fimages%2Fethicalinsight-low-res.png&name=1&owner=1&pattern=Charlie%20Brown&pulls=1&stargazers=1&theme=Dark" alt="EthicalInsight" width="640" height="320" />
 
-<hr>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?style=for-the-badge&cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: GPL-3.0" src="https://img.shields.io/badge/license-GPL--3.0-green?style=for-the-badge" />
+  </a>
+  <a href="https://www.linkedin.com/in/thomasfrancois-cv/" target="_blank">
+    <img alt="Twitter: bufgix" src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555" />
+  </a>
+</p>
   
-
- <h3 align="center">Centralized Active Directory Auditing Tool</h3>
   <p align="center">
     <br />
     <a href="https://ethicalinsight.alchemistcreative.cloud/"><strong>Explore the docs »</strong></a>
@@ -32,9 +24,8 @@
     <a href="https://github.com/AlchemiistCreative/EthicalInsight/issues">Request Feature</a>
   </p>
 </div>
-
-
-
+<hr>
+</div>
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
