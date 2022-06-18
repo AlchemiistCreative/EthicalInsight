@@ -207,7 +207,6 @@ Your Name - [@alchmst_](https://twitter.com/alchmst_) - contact@thomasfrancois.n
 
 Project Link: [https://github.com/AlchemiistCreative/EthicalInsight](https://github.com/AlchemiistCreative/EthicalInsight)
 
-tags: ["animals", "Chicago", "zoos"]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
