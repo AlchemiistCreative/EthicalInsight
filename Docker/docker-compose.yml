@@ -1,0 +1,33 @@
+version: "3.4"
+
+services:
+
+  mongodb:
+    image: 'mongo'
+    container_name: 'ethicalinsight-mongodb'
+    environment:
+      - MONGO_INITDB_DATABASE=ethicalinsight-db
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - ./init-mongodb.js:/docker-entrypoint-initdb.d/init-mongodb.js:ro
+      - ./mongo-volume:/data/db
+    ports:
+      - '27017-27019:27017-27019'
+    restart: always
+
+  server:
+    image: 'alchemistcreative/ethicalinsight:latest'
+    container_name: 'ethicalinsight-server'
+    environment:
+      - TOKEN_KEY="somerandomcharacters"
+      - VALIDATION_TOKEN="0000"
+      - DEBUG_MODE=false
+      - MONGODB_URL=mongodb://ethicalinsight-user:ethicalinsight-pwd@mongodb:27017/ethicalinsight-db
+      - PORT=5000
+      - WAIT_HOSTS=mongodb:27017
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongodb
+    
