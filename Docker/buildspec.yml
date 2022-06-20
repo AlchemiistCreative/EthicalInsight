@@ -1,0 +1,17 @@
+phases: 
+  build: 
+    commands: 
+      - "echo Build started on `date`"
+      - "echo Building the Docker image..."
+      - "docker build -t alchemistcreative/ethicalinsight ./src/"
+      - "docker tag alchemistcreative/ethicalinsight alchemistcreative/ethicalinsight:latest"
+  post_build: 
+    commands: 
+      - "echo Build completed on `date`"
+      - "echo Pushing the Docker image..."
+      - "docker push alchemistcreative/ethicalinsight:latest"
+  pre_build: 
+    commands: 
+      - "echo Logging in to Docker Hub..."
+      - "docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS"
+version: 0.1
