@@ -4,12 +4,14 @@ const router = require('express').Router()
 //middlewares
 const auth = require('../middleware/api.auth')
 const Log = require('../middleware/log')
+const Alerting = require('../middleware/alerting')
 //models
 const Info = require('../models/info.model')
 const User = require('../models/user.model')
 const AuditedUser = require('../models/audit.model');
 const AuditedUserHistory = require('../models/audit.history.model');
 const Events = require('../models/audit.events.model')
+const Alerts = require('../models/alert.model')
 //packages
 const generateApiKey = require('generate-api-key');
 const bcrypt = require('bcrypt');
@@ -17,12 +19,14 @@ const jwt = require('jsonwebtoken');
 
 //DEBUG MODE
 const debug_mode = process.env.DEBUG_MODE
+
 console.log(debug_mode)
 function clog(comment,data){
 
   if (debug_mode === "true"){
 
     console.log(comment + JSON.stringify(data));
+
   
   }
 
@@ -44,17 +48,6 @@ function Parsing(data, line, replace){
   }else{
 
     return parsed
-  }
-
-}
-
-function alerting(subject){
-
-  const custom_subject
-  
-  if(subject === custom_subject ){
-    
-
   }
 
 }
@@ -142,14 +135,14 @@ router.route('/push/data/:domain').post(auth, (req, res) => {
   })
   }
 })
-// Audited Data Related - Info about DC host
+// Post Audited data
 router.route('/push/events/:domain').post(auth, (req, res) => {
   
-
+  
   const Domain = req.params.domain;
   const Message = req.body.Message;
 
-
+  //console.log(req.body.Message)
   const EventID = req.body.EventID;
   const DisplayName = req.body.DisplayName;
   const MachineName = req.body.MachineName;
@@ -177,10 +170,13 @@ router.route('/push/events/:domain').post(auth, (req, res) => {
     "RecordID": RecordID
 
   }
-  
+
+  Alerting(body)
+
   const newEntry = new Events(body)
 
-  clog("body", body);
+  //clog("body", body);
+  //console.log(body);
 
   if (!(RecordID && Message && Domain)) {
     res.status(400).send("Missing JSON key(s).");
@@ -253,7 +249,7 @@ router.route('/audit/users/:ObjectGUID').get(auth, async (req, res) => {
   res.json(user_history);
 
 })
-
+// Generate an API Key by API
 router.route('/generate/apikey').post(auth, async (req, res) => {
 
   const APIkey = generateApiKey({ method: 'string', length: 32 });
@@ -268,7 +264,7 @@ router.route('/generate/apikey').post(auth, async (req, res) => {
 
   res.send(APIkey);
 })
-
+//Delete logs
 router.route('/logs/delete').get(auth, async (req, res) => {
 
   Log.deleteAllLogs(function(err, callback){
@@ -277,7 +273,49 @@ router.route('/logs/delete').get(auth, async (req, res) => {
 
   
 })
+//Create Alert by API
+router.route('/alert/create/:AlertID').post(auth, async (req, res) => {
 
+
+
+  const AlertID = req.params.AlertID
+
+  const Name = req.body.Name
+  const Type = req.body.Type
+  const Filter = req.body.Filter
+  const CreatedBy = req.body.CreatedBy
+
+  const filter_ = {AlertID: AlertID}
+
+  const body = {
+    "Name": Name,
+    "Type":Type,
+    "Filter":Filter,
+    "CreatedBy":CreatedBy
+  }
+
+  Alerts.updateOne(filter_, body, {upsert: true}, (err, alerts) => {
+    if(err) throw err;
+
+
+    res.json(alerts);
+
+  })
+
+  
+})
+
+//DEBUG
+router.route('/alert/debug').get( async (req, res) => {
+
+
+
+Alerting();
+
+res.json('ok');
+
+  
+})
 //--------------
 
 router.route('/register').post( async (req, res) => {

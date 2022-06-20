@@ -210,7 +210,7 @@ router.route('/audit/reports/events/:domain').get(auth, async (req, res) => {
   const today = new Date();
   const date = today.toLocaleString('en-us', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });;
   const total_events = await Events.countDocuments({})
-  const total_created_users = await Events.countDocuments({Action: { "$regex": "enabled", "$options": "i" }})
+  const total_created_users = await Events.countDocuments({Action: { "$regex": "enabled|created", "$options": "i" }})
   const total_deleted_users = await Events.countDocuments({Action: { "$regex": "deleted", "$options": "i" }})
   const active_page = "report_events";
 
