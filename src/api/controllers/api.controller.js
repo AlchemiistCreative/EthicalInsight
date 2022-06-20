@@ -48,7 +48,16 @@ function Parsing(data, line, replace){
 
 }
 
+function alerting(subject){
 
+  const custom_subject
+  
+  if(subject === custom_subject ){
+    
+
+  }
+
+}
 
 // Audited Data Related - Mass data
 router.route('/push/data').post(auth, (req, res) => {
