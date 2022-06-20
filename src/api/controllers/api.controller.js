@@ -171,8 +171,10 @@ router.route('/push/events/:domain').post(auth, (req, res) => {
 
   }
 
+  if (process.env.ALERTING == true){
   Alerting(body)
-
+  }
+  
   const newEntry = new Events(body)
 
   //clog("body", body);

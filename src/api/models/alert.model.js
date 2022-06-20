@@ -5,6 +5,7 @@ const alertSchema = new Schema({
     AlertID: { type: Number, default: 0, required: true },
     Name: { type: String, required: true },
     Trigger: { type: String, required: true },
+    To: { type: String, required: true },
     Type: { type: String, required: true },
     CreatedBy: { type: String, required: false },
     
