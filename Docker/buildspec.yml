@@ -1,4 +1,4 @@
-version: 0.1
+version: 0.2
 
 env:
   secrets-manager:
@@ -9,21 +9,21 @@ env:
 phases: 
   build: 
     commands: 
-      - "echo Build started on `date`"
-      - "echo Building the Docker image..."
-      - "docker build -t ethicalinsight -f src/Dockerfile src/"
-      - "docker tag ethicalinsight alchemistcreative/ethicalinsight:latest"
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - docker build -t ethicalinsight -f src/Dockerfile src/
+      - docker tag ethicalinsight alchemistcreative/ethicalinsight:latest
   post_build: 
     commands: 
-      - "echo Build completed on `date`"
-      - "echo Pushing the Docker image..."
-      - "docker push alchemistcreative/ethicalinsight:latest"
-      - "echo Writing image definitions file"
-      - "printf '[{"name":"ethicalinsight-server","imageUri":"%s"}]' alchemistcreative/ethicalinsight:latest > imagedefinitions.json"
+      - echo Build completed on `date`
+      - echo Pushing the Docker image...
+      - docker push alchemistcreative/ethicalinsight:latest
+      - echo Writing image definitions file
+      - printf '[{"name":"ethicalinsight-server","imageUri":"%s"}]' alchemistcreative/ethicalinsight:latest > imagedefinitions.json
   pre_build: 
     commands: 
-      - "echo Logging in to Docker Hub..."
-      - "docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS"
+      - echo Logging in to Docker Hub...
+      - docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS
 
 artifacts:
     files: imagedefinitions.json
