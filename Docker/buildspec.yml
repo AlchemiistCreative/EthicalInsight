@@ -1,3 +1,9 @@
+env:
+  secrets-manager:
+    DOCKERHUB_PASS: "dockerhub:password"
+    DOCKERHUB_USERNAME: "dockerhub:username"
+
+
 phases: 
   build: 
     commands: 
