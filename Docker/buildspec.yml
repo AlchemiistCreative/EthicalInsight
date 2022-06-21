@@ -1,3 +1,5 @@
+version: 0.1
+
 env:
   secrets-manager:
     DOCKERHUB_PASS: "dockerhub:password"
@@ -16,8 +18,12 @@ phases:
       - "echo Build completed on `date`"
       - "echo Pushing the Docker image..."
       - "docker push alchemistcreative/ethicalinsight:latest"
+      - "echo Writing image definitions file"
+      - "printf '[{"name":"ethicalinsight-server","imageUri":"%s"}]' alchemistcreative/ethicalinsight:latest > imagedefinitions.json"
   pre_build: 
     commands: 
       - "echo Logging in to Docker Hub..."
       - "docker login --username $DOCKERHUB_USERNAME --password $DOCKERHUB_PASS"
-version: 0.1
+
+artifacts:
+    files: imagedefinitions.json
