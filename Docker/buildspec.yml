@@ -9,8 +9,8 @@ phases:
     commands: 
       - "echo Build started on `date`"
       - "echo Building the Docker image..."
-      - "docker build -t alchemistcreative/ethicalinsight src/Dockerfile"
-      - "docker tag alchemistcreative/ethicalinsight alchemistcreative/ethicalinsight:latest"
+      - "docker build -t ethicalinsight src/Dockerfile"
+      - "docker tag ethicalinsight alchemistcreative/ethicalinsight:latest"
   post_build: 
     commands: 
       - "echo Build completed on `date`"
