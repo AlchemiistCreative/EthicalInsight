@@ -2,6 +2,10 @@
 
 pipeline {
   agent none
+  environment {
+    TARGET = 'thomas@ci.lab.alchemist.stackx'
+    }
+
   stages {
     stage('Docker Build') {
       agent any
@@ -18,5 +22,10 @@ pipeline {
         }
       }
     }
+    stage('Deploy') {
+      steps { 
+          sh 'ssh ${TARGET} docker-compose -f /var/ci/docker-compose.yml up -d'
+          }
   }
+}
 }
