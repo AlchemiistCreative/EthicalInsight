@@ -21,25 +21,29 @@ const jwt = require('jsonwebtoken');
 const debug_mode = process.env.DEBUG_MODE
 
 console.log(debug_mode)
-function clog(comment,data){
-
-  if (debug_mode === "true"){
-
+if (debug_mode == true){
+  function clog(comment,data){
     console.log(comment + JSON.stringify(data));
-
-  
   }
 
-}
 
+
+  router.route('/api/debug').get(auth, async (req, res) => {
+
+
+    res.json({debug: true});
+  
+  
+  })
+  
+
+
+}
 // Parsing function for events
 
 function Parsing(data, line, replace){
 
   var parsed = data.split('\n')[line];
-
-  
-
   if(!(replace === null || replace === "" || replace === undefined)){
     var replaced = parsed.replace(/\s/g, '')
     var replaced_ = replaced.replace(replace, '')

@@ -20,8 +20,8 @@ services:
     image: 'alchemistcreative/ethicalinsight:latest'
     container_name: 'ethicalinsight-server'
     environment:
-      - TOKEN_KEY="somerandomcharacters"
-      - VALIDATION_TOKEN="0000"
+      - TOKEN_KEY=somerandomcharacters
+      - VALIDATION_TOKEN=0000
       - DEBUG_MODE=false
       - MONGODB_URL=mongodb://ethicalinsight-user:ethicalinsight-pwd@mongodb:27017/ethicalinsight-db
       - PORT=5000
