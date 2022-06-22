@@ -30,6 +30,8 @@ function sendNotification(type, to, subject, text){
             }); 
         case 'SES':
             //WORK IN PROGRESS
+            
+        case 'AZURE':
     }
 
 
