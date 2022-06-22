@@ -221,7 +221,6 @@ router.route('/audit/reports/events/:domain').get(auth, async (req, res) => {
     Info.getInfoByName(domain_name, function(err, infos){
       if (err) throw err;
 
-
       if(!(infos)){
         res.send(domain_name + " is not a valid domain name.")
       }else{
