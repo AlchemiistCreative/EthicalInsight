@@ -178,6 +178,7 @@ Ensure that your Domain Contoller is on the home page if it's not case check err
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- CONTRIBUTING -->
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
