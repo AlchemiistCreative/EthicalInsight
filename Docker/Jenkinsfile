@@ -24,7 +24,8 @@ pipeline {
     }
     stage('Deploy') {
       agent any
-      steps { 
+      steps {
+          sh 'scp Docker/docker-compose.yml ${TARGET}:/var/ci' 
           sh 'ssh ${TARGET} docker-compose -f /var/ci/docker-compose.yml up -d'
           }
   }
