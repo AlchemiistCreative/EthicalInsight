@@ -164,6 +164,19 @@ Ensure that your Domain Contoller is on the home page if it's not case check err
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+
+## Docker
+
+1. Change environment variables to fit your config in docker-compose.yml and run docker-compose.
+   ```bash
+   docker-compose up -d
+   ```
+2. You can also pull the image and run it without docker-compose or build the docker image from Dockerfile in src/Dockerfile
+   ```bash
+   docker run -d --env-file ./src/.env -p 5000:5000 --name ethicalinsight-server alchemistcreative/ethicalinsight:latest
+   ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 <!-- CONTRIBUTING -->
 ## Contributing
 
