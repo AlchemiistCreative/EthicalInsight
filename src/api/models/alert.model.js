@@ -2,12 +2,12 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const alertSchema = new Schema({
-    AlertID: { type: Number, default: 0, required: true },
+    AlertID: { type: String, default: 0, required: true },
     Name: { type: String, required: true },
-    Trigger: { type: String, required: true },
     To: { type: String, required: true },
+    From: { type: String, required: true },
     Type: { type: String, required: true },
-    CreatedBy: { type: String, required: false },
+    Trigger: { type: String, required: true },
     
 }, {timestamps: true})
 

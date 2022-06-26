@@ -13,14 +13,21 @@
 <script src="/js/libs/jquery.dataTables.min.js"></script>
 <script src="/js/libs/datetime.js"></script>
 
-<% if (active_page === 'reports') { %> 
+  <% if (active_page === 'reports') { %> 
           
     <script src="/js/datatables-users.js"></script>
-  
+
   <% } %>
     
   <% if (active_page === 'report_events') { %> 
     
     <script src="/js/datatables-events.js"></script>
+  
+  <% } %>
+
+
+  <% if (active_page === 'alerting') { %> 
+    
+    <script src="/js/datatables-alerts.js"></script>
   
   <% } %>

@@ -1,0 +1,44 @@
+<div class="projects-section-line">
+    <div class="projects-status">
+      <div class="item-status">
+          <p class="title">Add alerts</p>
+      </div>
+    </div>
+  </div>
+<section >
+    <div class="p-5">
+      <form action="/api/alerts/add" method="POST" class="form login alert-form">
+  
+        <div class="form__field">
+          <label for="form__name"><svg class="icon">
+            </svg>Name</label>
+          <input id="form__name" type="text" name="Name" class="form__input" placeholder="Name" required>
+        </div>
+  
+        <div class="form__field">
+          <label for="form__to"><svg class="icon">
+            </svg>To</label>
+          <input id="form__to" type="text" name="To" class="form__input" placeholder="To" required>
+        </div>
+        <div class="form__field">
+          <label for="form__from"><svg class="icon">
+            </svg>From</label>
+          <input id="form__from" type="text" name="From" class="form__input" placeholder="From" required>
+        </div>
+        <div class="form__field">
+          <label for="form__type"><svg class="icon">
+            </svg>Type</label>
+          <input id="form__type" type="text" name="Type" class="form__input" placeholder="Type" required>
+        </div>
+        <div class="form__field">
+          <label for="form__trigger"><svg class="icon">
+            </svg>Trigger</label>
+          <input id="form__trigger" type="text" name="Trigger" class="form__input" placeholder="Trigger" required>
+        </div>
+        <div class="form__field">
+          <input type="submit" value="Add Alert">
+        </div>
+  
+      </form>
+    </div>
+  </section>

@@ -16,28 +16,18 @@ const Alerts = require('../models/alert.model')
 const generateApiKey = require('generate-api-key');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken'); 
+const RandomID = require('uuid');
 
 //DEBUG MODE
 const debug_mode = process.env.DEBUG_MODE
 
 console.log(debug_mode)
 if (debug_mode == true){
-  function clog(comment,data){
-    console.log(comment + JSON.stringify(data));
-  }
-
-
 
   router.route('/api/debug').get(auth, async (req, res) => {
-
-
     res.json({debug: true});
-  
-  
   })
   
-
-
 }
 // Parsing function for events
 
@@ -98,7 +88,7 @@ router.route('/push/data/:domain').post(auth, (req, res) => {
 
   const newEntry = new AuditedUserHistory(body)
 
-  clog("body", body);
+  //clog("body", body);
 
   if (!(ObjectGUID && SAMAccountName && whenchanged && whencreated)) {
     res.status(400).send("Missing JSON key(s).");
@@ -175,10 +165,6 @@ router.route('/push/events/:domain').post(auth, (req, res) => {
 
   }
 
-  if (process.env.ALERTING == true){
-  Alerting(body)
-  }
-  
   const newEntry = new Events(body)
 
   //clog("body", body);
@@ -201,7 +187,7 @@ router.route('/push/events/:domain').post(auth, (req, res) => {
     res.status(400).send(err);
 
     }
-
+    Alerting(body);
     res.json(events);
 
   })
@@ -280,36 +266,57 @@ router.route('/logs/delete').get(auth, async (req, res) => {
   
 })
 //Create Alert by API
-router.route('/alert/create/:AlertID').post(auth, async (req, res) => {
+router.route('/alerts/add/').post(auth, async (req, res) => {
 
-
-
-  const AlertID = req.params.AlertID
+  const AlertID = RandomID.v1();
 
   const Name = req.body.Name
+  const To = req.body.To
+  const From = req.body.From
   const Type = req.body.Type
-  const Filter = req.body.Filter
-  const CreatedBy = req.body.CreatedBy
+  const Trigger = req.body.Trigger
 
-  const filter_ = {AlertID: AlertID}
 
-  const body = {
-    "Name": Name,
-    "Type":Type,
-    "Filter":Filter,
-    "CreatedBy":CreatedBy
+  if (!(Name && To && From && Type && Trigger)) {
+    res.status(400).send("Missing JSON key(s).");
+  }else{
+
+      const filter_ = {AlertID: AlertID}
+
+      const body = {
+        "AlertID": AlertID,
+        "Name": Name,
+        "To":To,
+        "From":From,
+        "Type": Type,
+        "Trigger": Trigger
+      }
+
+      Alerts.updateOne(filter_, body, {upsert: true}, (err, alerts) => {
+        if(err) throw err;
+        res.redirect('/dashboard/settings/alerts');
+      })
+
   }
+})
 
-  Alerts.updateOne(filter_, body, {upsert: true}, (err, alerts) => {
-    if(err) throw err;
+router.route('/alerts/').get(auth, async (req, res) => {
+  const data = await Alerts.find({});
+  res.json(data);
+})
 
+//Delete alert by id
+router.route('/alerts/delete/:AlertID').get(auth, async (req, res) => {
 
-    res.json(alerts);
+  const id = req.params.AlertID;
 
+  Alerts.findOneAndDelete({AlertID: id}, function(err, callback){
+    res.redirect('/dashboard/settings/alerts');
   })
 
   
 })
+
 
 //DEBUG
 router.route('/alert/debug').get( async (req, res) => {

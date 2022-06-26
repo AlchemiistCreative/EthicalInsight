@@ -4,8 +4,15 @@
     --baseColor: #606468;
   }
   
-  /* helpers/align.css */
   
+  .white-box {
+    background-color: #fff;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5%;
+    max-width: 30rem;
+  }
   .align {
     display: grid;
     -webkit-box-align: center;
@@ -19,7 +26,7 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    max-width: 20rem;
+    max-width: 25rem;
   }
   
   /* helpers/hidden.css */
@@ -54,53 +61,9 @@
     vertical-align: middle;
   }
   
-  /* layout/base.css */
   
   :root {
-    --htmlFontSize: 100%;
-  
-    --bodyBackgroundColor: #2c3338;
-    --bodyColor: var(--baseColor);
-    --bodyFontFamily: "Open Sans";
-    --bodyFontFamilyFallback: sans-serif;
-    --bodyFontSize: 0.875rem;
-    --bodyFontWeight: 400;
-    --bodyLineHeight: 1.5;
-  }
-  
-  * {
-    -webkit-box-sizing: inherit;
-            box-sizing: inherit;
-  }
-  
-  html {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    font-size: 100%;
-    font-size: var(--htmlFontSize);
-  }
-  
-  body {
-    background-color: #2c3338;
-    background-color: var(--bodyBackgroundColor);
-    color: #606468;
-    color: var(--bodyColor);
-    font-family: "Open Sans", sans-serif;
-    font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
-    font-size: 0.875rem;
-    font-size: var(--bodyFontSize);
-    font-weight: 400;
-    font-weight: var(--bodyFontWeight);
-    line-height: 1.5;
-    line-height: var(--bodyLineHeight);
-    margin: 0;
-    min-height: 100vh;
-  }
-  
-  /* modules/anchor.css */
-  
-  :root {
-    --anchorColor: #eee;
+    --anchorColor: var(--main-color);
   }
   
   a {
@@ -168,16 +131,16 @@
   
   :root {
     --loginBorderRadus: 0.25rem;
-    --loginColor: #eee;
+    --loginColor: var(--main-color);
   
-    --loginInputBackgroundColor: #3b4148;
-    --loginInputHoverBackgroundColor: #434a52;
+    --loginInputBackgroundColor: var(--app-form);
+    --loginInputHoverBackgroundColor: var(--app-form-hover);
   
-    --loginLabelBackgroundColor: #363b41;
+    --loginLabelBackgroundColor: var(--app-form);
   
-    --loginSubmitBackgroundColor: #ea4c88;
+    --loginSubmitBackgroundColor: #ff942e;
     --loginSubmitColor: #eee;
-    --loginSubmitHoverBackgroundColor: #d44179;
+    --loginSubmitHoverBackgroundColor: #e4852b;
   }
   
   .login {
@@ -202,7 +165,11 @@
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
-  
+  .alert-form label {
+    display: flex;
+    width:10%;
+    
+  }
   .login input[type="password"],
   .login input[type="text"] {
     background-color: #3b4148;

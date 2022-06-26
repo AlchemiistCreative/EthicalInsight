@@ -16,18 +16,20 @@
           <p>Settings</p>
           <p class="time"><%= date %></p>
         </div>
-        <div class="projects-section-line">
-          <div class="projects-status">
-            <div class="item-status">
-                <p class="title">Generate an API Key</p>
-            </div>
-          </div>
-        </div>
 
+        <% if (active_page === 'generating') { %> 
 
         <%- include ('generate') %>
-      
+        <% } %>
     
+        <% if (active_page === 'alerting') { %> 
+
+          <%- include ('app-alerting') %>
+        <% } %>
+        <% if (active_page === 'alerting-add') { %> 
+
+          <%- include ('app-alerting-add') %>
+        <% } %>
   </div>
 
 

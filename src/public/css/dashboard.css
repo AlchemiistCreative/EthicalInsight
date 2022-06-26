@@ -6,6 +6,8 @@
 
 :root {
   --app-container: #f3f6fd;
+  --app-form: #f3f6fd;
+  --app-form-hover: #ccd1dd;
   --main-color: #1f1c2e;
   --secondary-color: #4A4A4A;
   --link-color: #1f1c2e;
@@ -44,6 +46,8 @@
 .dark:root {
 
   --app-container: #111827;
+  --app-form: #111827;
+  --app-form-hover: #1a2338;
   --main-color: #fff;
   --secondary-color: rgba(255,255,255,.8);
   --projects-section: #1f2937;

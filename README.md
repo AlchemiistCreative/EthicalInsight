@@ -23,7 +23,7 @@
     ·
     <a href="https://github.com/AlchemiistCreative/EthicalInsight/issues">Request Feature</a>
   </p>
-</div>
+
 <hr>
 </div>
 <!-- TABLE OF CONTENTS -->

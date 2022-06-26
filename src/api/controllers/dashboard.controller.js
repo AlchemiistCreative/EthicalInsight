@@ -16,7 +16,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 
-
 router.route('/').get( (req, res) => {
   res.redirect('/dashboard/index')
 })
@@ -46,7 +45,6 @@ router.route('/test').get( (req, res) => {
   });
 
   })
-
 
 router.route('/index').get(auth, async (req, res) => {
     const token = req.cookies.token
@@ -85,7 +83,6 @@ router.route('/index').get(auth, async (req, res) => {
     })
 })
   
-
 //Generate APIKey (need to have a valid token)
 router.route('/settings').get(auth, async (req, res) => {
 
@@ -95,7 +92,7 @@ router.route('/settings').get(auth, async (req, res) => {
     const today = new Date();
     const date = today.toLocaleString('en-us', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });;
     const count = await Info.countDocuments()
-    const active_page = "settings";
+    const active_page = "generating";
 
 
     User.getUserById(user_id, function(err, user){
@@ -126,6 +123,83 @@ router.route('/settings').get(auth, async (req, res) => {
 })
 
 
+//Manage alerts
+router.route('/settings/alerts').get(auth, async (req, res) => {
+
+  const token = req.cookies.token
+  const decoded = jwt.verify(token, process.env.TOKEN_KEY);
+  const user_id = {user_id: decoded.user_id};
+  const today = new Date();
+  const date = today.toLocaleString('en-us', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });;
+  const count = await Info.countDocuments()
+  const active_page = "alerting";
+
+
+  User.getUserById(user_id, function(err, user){
+    //check err
+    if (err) throw err;
+
+    Info.find(function(err, infos){
+
+      Log.getAllLogs(function(err, logs){
+        if (err) throw err;
+
+        res.render('settings', {
+          first_name: user.first_name,
+          last_name: user.last_name,
+          email: user.email,  
+          date: date,
+          infos: infos,
+          count: count,
+          active_page: active_page,
+          logs: logs
+        })
+      
+      })
+
+    })
+
+  })
+})
+
+//Manage alerts
+router.route('/settings/alerts/add').get(auth, async (req, res) => {
+
+  const token = req.cookies.token
+  const decoded = jwt.verify(token, process.env.TOKEN_KEY);
+  const user_id = {user_id: decoded.user_id};
+  const today = new Date();
+  const date = today.toLocaleString('en-us', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });;
+  const count = await Info.countDocuments()
+  const active_page = "alerting-add";
+
+
+  User.getUserById(user_id, function(err, user){
+    //check err
+    if (err) throw err;
+
+    Info.find(function(err, infos){
+
+      Log.getAllLogs(function(err, logs){
+        if (err) throw err;
+
+        res.render('settings', {
+          first_name: user.first_name,
+          last_name: user.last_name,
+          email: user.email,  
+          date: date,
+          infos: infos,
+          count: count,
+          active_page: active_page,
+          logs: logs
+        })
+      
+      })
+
+    })
+
+  })
+})
 router.route('/generate/api/key').get(auth, async (req, res) => {
 
   const APIkey = generateApiKey({ method: 'string', length: 32 });
@@ -138,7 +212,6 @@ router.route('/generate/api/key').get(auth, async (req, res) => {
 
   res.status(200).json(APIkey);
 })
-
 
 
 router.route('/audit/reports/domain/:domain').get(auth, async (req, res) => {
@@ -259,15 +332,10 @@ router.route('/audit/reports/events/:domain').get(auth, async (req, res) => {
 })
 
 
-
 // Get History By User ID
 router.route('/audit/reports/users/:ObjectGUID').get(auth, async (req, res) => {
   const ObjectGUID = req.params.ObjectGUID;
-
   const filter = {ObjectGUID: ObjectGUID};
-  
-
-
   const user_history = await AuditedUserHistory.find(filter);
 
   res.send(user_history);

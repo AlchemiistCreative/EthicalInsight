@@ -31,7 +31,8 @@ function sendNotification(type, to, subject, text){
         case 'SES':
             //WORK IN PROGRESS
             
-        case 'AZURE':
+        case 'test':
+            console.log("test notif");
     }
 
 
@@ -49,8 +50,9 @@ Alerts.find({}, function (err, triggers){
         let To_ = trigger["To"];
 
             if(Trigger_ == data[Type_]){
+                console.log("test notif" + data[Type_])
 
-                sendNotification(To_, `${Trigger_} has been triggered.`, data["Message"])
+                //sendNotification("test", To_, `${Trigger_} has been triggered.`, data["Message"])
 
             }
         }
