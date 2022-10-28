@@ -65,7 +65,7 @@ You are free to <a href="#contributing">contribute</a> to this project and bring
 
 The project consists in centralizing the audit of one or several AD domain controllers. 
 It's working with a powershell script as agent on the DC, pushing several data to MongoDB through a REST API.
-This project can be easily deployed with <a href="#docker">Docker</a>
+This project can be easily deployed with <a href="#docker">Docker</a>.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -166,7 +166,7 @@ Ensure that your Domain Contoller is on the home page if it's not case check err
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-### 5. Docker
+## Docker
 
 1. Change environment variables to fit your config in docker-compose.yml and run docker-compose.
    ```bash
